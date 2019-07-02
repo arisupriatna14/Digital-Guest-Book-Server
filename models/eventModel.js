@@ -10,13 +10,14 @@ const eventSchema = mongoose.Schema({
   owner: {
     type: String
   },
+  description: {
+    type: String
+  },
   startDateTime: {
-    type: Date,
-    required: true
+    type: Date
   },
   endDateTime: {
-    type: Date,
-    required: true
+    type: Date
   },
 }, {
   timestamps: true

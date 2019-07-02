@@ -5,6 +5,7 @@ const createEvent = (req, res) => {
     name,
     location,
     owner,
+    description,
     startDateTime,
     endDateTime
   } = req.body;
@@ -14,6 +15,7 @@ const createEvent = (req, res) => {
       name,
       location,
       owner,
+      description,
       startDateTime,
       endDateTime
     })
