@@ -6,6 +6,7 @@ const createVisitor = (req, res) => {
     email,
     phoneNumber,
     address,
+    notes
   } = req.body;
   const { id } = req.params;
 
@@ -15,7 +16,8 @@ const createVisitor = (req, res) => {
       email,
       phoneNumber,
       address,
-      eventId: id
+      eventId: id,
+      notes
     })
     .then((result) => {
       res.status(201).json({
@@ -36,6 +38,7 @@ const getAllVisitorByEvent = (req, res) => {
 
   Visitor
     .find({})
+    .sort({ createdAt: -1 })
     .where({ eventId: id })
     .populate('eventId', 'name')
     .then((result) => {

@@ -36,6 +36,7 @@ const createEvent = (req, res) => {
 const getAllEvent = (req, res) => {
   Event
     .find({})
+    .sort({ createdAt: -1 })
     .then((result) => {
       res.status(200).json({
         message: 'Get all event success!',

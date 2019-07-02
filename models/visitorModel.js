@@ -16,6 +16,9 @@ const visitorSchema = mongoose.Schema({
   eventId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Event'
+  },
+  notes: {
+    type: String
   }
 });
 
